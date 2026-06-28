@@ -1,5 +1,6 @@
 import heroImage from "../assets/images/hero.jpg";
 import { motion } from "framer-motion";
+import Button from "../components/Button";
 
 function Hero() {
   return (
@@ -65,16 +66,14 @@ function Hero() {
         </motion.p>
 
         {/* Button */}
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.3, duration: 0.7 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.96 }}
-          className="mt-12 rounded-full bg-orange-500 px-10 py-4 text-lg font-semibold text-white shadow-2xl"
+          className="mt-12"
         >
-          Reserve a Table
-        </motion.button>
+          <Button className="px-10 py-4 text-lg">Reserve a Table</Button>
+        </motion.div>
 
         {/* Scroll */}
         <motion.div
