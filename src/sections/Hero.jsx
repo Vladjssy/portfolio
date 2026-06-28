@@ -4,7 +4,10 @@ import Button from "../components/Button";
 
 function Hero() {
   return (
-    <section className="relative flex h-screen items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative flex h-screen items-center justify-center overflow-hidden"
+    >
       {/* Background */}
       <motion.img
         src={heroImage}
@@ -23,7 +26,7 @@ function Hero() {
         className="absolute inset-0 bg-black/65"
       />
 
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 px-6 text-center">
         {/* Welcome */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -34,22 +37,21 @@ function Hero() {
           Welcome to Bella Italia
         </motion.p>
 
-        {/* Taste */}
+        {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
-          className="text-7xl md:text-8xl font-black text-white"
+          className="text-7xl font-black text-white md:text-8xl"
         >
           Taste
         </motion.h1>
 
-        {/* Real Italy */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 0.8 }}
-          className="text-6xl md:text-8xl font-black text-white leading-tight"
+          className="text-6xl font-black leading-tight text-white md:text-8xl"
         >
           The Real Italy
         </motion.h1>
@@ -59,7 +61,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 0.8 }}
-          className="mx-auto mt-8 max-w-2xl text-xl text-gray-200 leading-8"
+          className="mx-auto mt-8 max-w-2xl text-xl leading-8 text-gray-200"
         >
           Fresh handmade pasta, authentic pizza, premium wine and unforgettable
           evenings.
@@ -72,10 +74,12 @@ function Hero() {
           transition={{ delay: 2.3, duration: 0.7 }}
           className="mt-12"
         >
-          <Button className="px-10 py-4 text-lg">Reserve a Table</Button>
+          <a href="#reservation">
+            <Button className="px-10 py-4 text-lg">Reserve a Table</Button>
+          </a>
         </motion.div>
 
-        {/* Scroll */}
+        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{

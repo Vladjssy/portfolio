@@ -42,7 +42,7 @@ const menuItems = [
 
 function Menu() {
   return (
-    <section className="bg-[#0f0f0f] py-24">
+    <section id="menu" className="...">
       <div className="mx-auto max-w-7xl px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

@@ -11,7 +11,7 @@ const features = [
 
 function About() {
   return (
-    <section className="bg-[#0f0f0f] py-24">
+    <section id="about" className="bg-[#0f0f0f] py-28">
       <div className="mx-auto flex max-w-7xl items-center gap-20 px-8">
         {/* Image */}
 

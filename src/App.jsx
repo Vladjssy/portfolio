@@ -4,6 +4,8 @@ import About from "./sections/About";
 import Menu from "./sections/Menu";
 import Gallery from "./sections/Gallery";
 import Stats from "./sections/Stats";
+import Reservation from "./sections/Reservation";
+import Footer from "./sections/Footer";
 function App() {
   return (
     <>
@@ -13,6 +15,8 @@ function App() {
       <Menu />
       <Gallery />
       <Stats />
+      <Reservation />
+      <Footer />
     </>
   );
 }
