@@ -3,7 +3,7 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Menu from "./sections/Menu";
 import Gallery from "./sections/Gallery";
-
+import Stats from "./sections/Stats";
 function App() {
   return (
     <>
@@ -12,6 +12,7 @@ function App() {
       <About />
       <Menu />
       <Gallery />
+      <Stats />
     </>
   );
 }
