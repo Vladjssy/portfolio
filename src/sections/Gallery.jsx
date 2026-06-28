@@ -26,16 +26,16 @@ const images = [
 ];
 
 function Gallery() {
-  const classes = [
-    "col-span-2 row-span-2",
-    "col-span-2 row-span-1",
-    "col-span-1 row-span-1",
-    "col-span-1 row-span-1",
+  const desktopClasses = [
+    "lg:col-span-2 lg:row-span-2",
+    "lg:col-span-2 lg:row-span-1",
+    "lg:col-span-1 lg:row-span-1",
+    "lg:col-span-1 lg:row-span-1",
   ];
 
   return (
-    <section id="gallery" className="...">
-      <div className="mx-auto max-w-7xl px-8">
+    <section id="gallery" className="bg-[#171717] py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ function Gallery() {
           <SectionTitle subtitle="Gallery" title="Moments From Bella Italia" />
         </motion.div>
 
-        <div className="grid h-[700px] grid-cols-4 grid-rows-2 gap-6">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:h-[700px] lg:grid-cols-4 lg:grid-rows-2">
           {images.map((item, index) => (
             <motion.div
               key={item.title}
@@ -56,22 +56,22 @@ function Gallery() {
                 duration: 0.6,
                 delay: index * 0.15,
               }}
-              className={`group relative overflow-hidden rounded-3xl ${classes[index]}`}
+              className={`group relative overflow-hidden rounded-3xl ${desktopClasses[index]}`}
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                className="h-72 w-full object-cover transition duration-700 group-hover:scale-110 lg:h-full"
               />
 
               <div className="absolute inset-0 bg-black/20 transition duration-500 group-hover:bg-black/50"></div>
 
-              <div className="absolute bottom-8 left-8 translate-y-8 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <p className="uppercase tracking-[4px] text-sm text-orange-400">
+              <div className="absolute bottom-6 left-6 translate-y-8 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <p className="text-sm uppercase tracking-[4px] text-orange-400">
                   Bella Italia
                 </p>
 
-                <h3 className="mt-2 text-3xl font-bold text-white">
+                <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
                   {item.title}
                 </h3>
               </div>

@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 
 import MenuCard from "../components/MenuCard";
+import SectionTitle from "../components/SectionTitle";
 
 import pizzaImage from "../assets/images/pizza.jpg";
 import pastaImage from "../assets/images/pasta.jpg";
 import steakImage from "../assets/images/steak.jpg";
 import dessertImage from "../assets/images/dessert.jpg";
-import SectionTitle from "../components/SectionTitle";
+
 const menuItems = [
   {
     image: pizzaImage,
@@ -16,21 +17,18 @@ const menuItems = [
     price: "$18",
     featured: true,
   },
-
   {
     image: pastaImage,
     title: "Carbonara",
     description: "Creamy Italian pasta with pancetta and parmesan cheese.",
     price: "$22",
   },
-
   {
     image: steakImage,
     title: "Ribeye Steak",
     description: "Premium grilled steak served with roasted vegetables.",
     price: "$36",
   },
-
   {
     image: dessertImage,
     title: "Tiramisu",
@@ -42,8 +40,8 @@ const menuItems = [
 
 function Menu() {
   return (
-    <section id="menu" className="...">
-      <div className="mx-auto max-w-7xl px-8">
+    <section id="menu" className="bg-[#111111] py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +51,7 @@ function Menu() {
           <SectionTitle subtitle="Our Menu" title="Popular Dishes" />
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-10">
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:mt-16 lg:grid-cols-2 lg:gap-10">
           {menuItems.map((item) => (
             <MenuCard
               key={item.title}
@@ -62,6 +60,7 @@ function Menu() {
               description={item.description}
               price={item.price}
               featured={item.featured}
+              imagePosition={item.imagePosition}
             />
           ))}
         </div>

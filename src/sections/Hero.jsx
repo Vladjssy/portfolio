@@ -26,7 +26,7 @@ function Hero() {
         className="absolute inset-0 bg-black/65"
       />
 
-      <div className="relative z-10 px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-24 text-center lg:pt-28">
         {/* Welcome */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
-          className="text-7xl font-black text-white md:text-8xl"
+          className="text-5xl font-black text-white sm:text-6xl lg:text-8xl"
         >
           Taste
         </motion.h1>
@@ -51,7 +51,7 @@ function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 0.8 }}
-          className="text-6xl font-black leading-tight text-white md:text-8xl"
+          className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-8xl"
         >
           The Real Italy
         </motion.h1>
@@ -61,7 +61,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 0.8 }}
-          className="mx-auto mt-8 max-w-2xl text-xl leading-8 text-gray-200"
+          className="mx-auto mt-6 max-w-2xl px-2 text-lg leading-8 text-gray-200 sm:text-xl"
         >
           Fresh handmade pasta, authentic pizza, premium wine and unforgettable
           evenings.
@@ -75,7 +75,9 @@ function Hero() {
           className="mt-12"
         >
           <a href="#reservation">
-            <Button className="px-10 py-4 text-lg">Reserve a Table</Button>
+            <Button className="px-8 py-3 text-base sm:px-10 sm:py-4 sm:text-lg">
+              Reserve a Table
+            </Button>
           </a>
         </motion.div>
 
@@ -91,7 +93,7 @@ function Hero() {
             duration: 1.5,
             repeat: Infinity,
           }}
-          className="mt-16 text-3xl text-white"
+          className="mt-12 text-2xl text-white sm:mt-16 sm:text-3xl"
         >
           ↓
         </motion.div>
