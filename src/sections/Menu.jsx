@@ -6,7 +6,7 @@ import pizzaImage from "../assets/images/pizza.jpg";
 import pastaImage from "../assets/images/pasta.jpg";
 import steakImage from "../assets/images/steak.jpg";
 import dessertImage from "../assets/images/dessert.jpg";
-
+import SectionTitle from "../components/SectionTitle";
 const menuItems = [
   {
     image: pizzaImage,
@@ -49,11 +49,8 @@ function Menu() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
         >
-          <p className="uppercase tracking-[5px] text-orange-500">Our Menu</p>
-
-          <h2 className="mt-5 text-5xl font-bold text-white">Popular Dishes</h2>
+          <SectionTitle subtitle="Our Menu" title="Popular Dishes" />
         </motion.div>
 
         <div className="grid grid-cols-2 gap-10">

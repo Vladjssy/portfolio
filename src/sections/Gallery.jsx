@@ -1,54 +1,80 @@
 import { motion } from "framer-motion";
+import SectionTitle from "../components/SectionTitle";
 
-import heroImage from "../assets/images/hero.jpg";
-import restaurantImage from "../assets/images/restaurant.jpg";
-import pizzaImage from "../assets/images/pizza.jpg";
-import pastaImage from "../assets/images/pasta.jpg";
+import interiorImage from "../assets/images/interior.jpg";
+import chefImage from "../assets/images/chef.jpg";
+import wineImage from "../assets/images/wine.jpg";
+import dinnerImage from "../assets/images/dinner.jpg";
 
-const images = [heroImage, restaurantImage, pizzaImage, pastaImage];
+const images = [
+  {
+    image: interiorImage,
+    title: "Elegant Interior",
+  },
+  {
+    image: chefImage,
+    title: "Our Chef",
+  },
+  {
+    image: wineImage,
+    title: "Italian Wine",
+  },
+  {
+    image: dinnerImage,
+    title: "Dinner Experience",
+  },
+];
 
 function Gallery() {
+  const classes = [
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-1",
+    "col-span-1 row-span-1",
+    "col-span-1 row-span-1",
+  ];
+
   return (
-    <section className="bg-[#0f0f0f] py-24">
+    <section className="bg-[#111111] py-24">
       <div className="mx-auto max-w-7xl px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
         >
-          <p className="uppercase tracking-[5px] text-orange-500">Gallery</p>
-
-          <h2 className="mt-4 text-5xl font-bold text-white">
-            Moments From Bella Italia
-          </h2>
+          <SectionTitle subtitle="Gallery" title="Moments From Bella Italia" />
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-8">
-          {images.map((image, index) => (
+        <div className="grid h-[700px] grid-cols-4 grid-rows-2 gap-6">
+          {images.map((item, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
+              key={item.title}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{
+                duration: 0.6,
                 delay: index * 0.15,
-                duration: 0.5,
               }}
-              className="group overflow-hidden rounded-3xl"
+              className={`group relative overflow-hidden rounded-3xl ${classes[index]}`}
             >
               <img
-                src={image}
-                alt=""
-                className="
-                  h-80
-                  w-full
-                  object-cover
-                  duration-700
-                  group-hover:scale-110
-                "
+                src={item.image}
+                alt={item.title}
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
               />
+
+              <div className="absolute inset-0 bg-black/20 transition duration-500 group-hover:bg-black/50"></div>
+
+              <div className="absolute bottom-8 left-8 translate-y-8 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <p className="uppercase tracking-[4px] text-sm text-orange-400">
+                  Bella Italia
+                </p>
+
+                <h3 className="mt-2 text-3xl font-bold text-white">
+                  {item.title}
+                </h3>
+              </div>
             </motion.div>
           ))}
         </div>
